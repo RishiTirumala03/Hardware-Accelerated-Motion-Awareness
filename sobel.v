@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/23/2025 11:18:22 PM
-// Design Name: 
-// Module Name: sobel
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 // sobel_xy.v - streaming 3×3 Sobel (|Gx| + |Gy|), grayscale out on RGB
 // sobel_xy_inferred.v - streaming 3×3 Sobel (|Gx|+|Gy|), no XPM
 module sobel #(
