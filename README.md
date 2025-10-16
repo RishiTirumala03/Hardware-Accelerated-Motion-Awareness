@@ -5,6 +5,7 @@ This project implements a **real-time, tile-based motion detection pipeline** on
 
 The system outputs motion vectors tile-by-tile in hardware and overlays the result directly on an HDMI output. This makes it highly suitable for **gesture recognition**, **autonomous perception**, and other **embedded vision applications**.
 
+A software-based demo was built to compare the hardware-based version and the software-based version. The software-based version was entirely vibe-coded. It is by no means robust.
 ---
 
 ## Core Concept
