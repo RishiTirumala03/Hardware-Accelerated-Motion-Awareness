@@ -9,7 +9,7 @@
 // Project Name: Motion Detection Pipeline
 // Target Devices: FPGA
 // Description: Binary threshold with adaptive moving average, noise suppression,
-//              and optional grayscale conversion (USE_LUMA)
+//              and optional grayscale conversion 
 //////////////////////////////////////////////////////////////////////////////////
 
 module bin_thresh #(
@@ -34,7 +34,7 @@ module bin_thresh #(
   output reg         m_pVSync
 );
 
-  // -------------------- Helper functions --------------------
+  // Helper functions 
   // Convert RGB to luma (grayscale intensity)
   function [7:0] rgb2y;
     input [23:0] rgb;
@@ -58,7 +58,7 @@ module bin_thresh #(
     end
   endfunction
 
-  // -------------------- Main pipeline --------------------
+  // Main pipeline 
   wire [7:0] val8 = USE_LUMA ? rgb2y(s_pData) : s_pData[7:0];
 
   reg  [7:0] mean8 = 8'd0;
@@ -70,10 +70,10 @@ module bin_thresh #(
   wire signed [9:0] thr_s     = $signed({1'b0,mean8}) + $signed(BIAS);
   wire [7:0]        thr8      = sat8(thr_s);
 
-  // require BOTH brightness above threshold and abs_err above floor
+  // Thresholding
   wire edge_bit = (val8 >= thr8) && (abs_err >= ERR_FLOOR);
 
-  // -------------------- Output registers --------------------
+  //Output registers
   always @(posedge pclk) begin
     if (rst) begin
       mean8    <= 8'd0;
