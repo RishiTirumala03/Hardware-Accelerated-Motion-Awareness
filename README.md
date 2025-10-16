@@ -16,9 +16,7 @@ The system outputs motion vectors tile-by-tile in hardware and overlays the resu
 
 ## IP Cores Used (from [Digilent](https://digilent.com))
 - `DVI2RGB` — HDMI input interface  
-- `VTC` (Video Timing Controller) — for timing synchronization  
 - `Clocking Wizard` — pixel and fabric clock generation  
-- `AXI Video-to-Stream` — conversion to streaming pixel data  
 - `RGB2DVI` — HDMI output interface
 
 ---
