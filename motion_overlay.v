@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-// motion_overlay.v - red box overlay with tile counter logic EXACTLY matching vecgen
+// motion_overlay.v - red box overlay with tile counter logic 
 
 module motion_overlay #(
   parameter integer H_ACTIVE   = 1280,
@@ -57,7 +57,7 @@ module motion_overlay #(
     end
   end
 
-  // tile counters (now match vecgen 1:1)
+  // tile counters 
   reg [LWX-1:0] xl;
   reg [LWY-1:0] yl;
   reg [3:0]     tx;
@@ -78,7 +78,7 @@ module motion_overlay #(
           xl <= xl + 1'b1;
         end
       end else begin
-        // 🔥 MATCH VECGEN: reset horizontal tile counter on blanking
+        //reset horizontal tile counter on blanking
         xl <= 0;
         tx <= 0;
       end
