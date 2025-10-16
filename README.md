@@ -23,7 +23,7 @@ The system outputs motion vectors tile-by-tile in hardware and overlays the resu
 
 ---
 
-## 🛠️ Custom Hardware Modules
+## Custom Hardware Modules
 - `bin_thresh.v` — Adaptive binary thresholding using moving average for robust noise suppression  
 - `vecgen.v` — Tile-based brightness motion detection engine (1-bit output per tile)  
 - Tile grid overlay logic — Real-time visualization of detected motion  
