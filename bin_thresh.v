@@ -1,17 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/24/2025
-// Design Name: 
-// Module Name: bin_thresh_ma
-// Project Name: Motion Detection Pipeline
-// Target Devices: FPGA
-// Description: Binary threshold with adaptive moving average, noise suppression,
-//              and optional grayscale conversion 
-//////////////////////////////////////////////////////////////////////////////////
-
 module bin_thresh #(
   parameter integer USE_LUMA    = 1,   // 1 = use luma, 0 = use raw channel
   parameter integer ALPHA_SHIFT = 6,   // smoothing factor (higher = less noise)
