@@ -64,7 +64,7 @@ module sobel #(
   wire [7:0] y_cur_w = rgb2y(s_pData);
   reg  [7:0] y_cur_d;
 
-  // --------- inferred BRAM line buffers (A & B) ---------
+  // inferred BRAM line buffers (A & B) 
   // We read both memories every cycle at address x (combinational -> registered),
   // and write the *current* line into whichever RAM is acting as "row-2".
   // At end-of-line we swap roles via 'sel'.
@@ -90,7 +90,7 @@ module sobel #(
   wire [7:0] rowm1_rd = sel ? dout_b : dout_a;  // previous line
   wire [7:0] rowm2_rd = sel ? dout_a : dout_b;  // two lines up
 
-  // --------- 3×3 window shift regs ---------
+  // 3×3 window shift regs
   reg [7:0] t0,t1,t2, m0,m1,m2, b0,b1,b2;
 
   // Sobel math
@@ -104,7 +104,7 @@ module sobel #(
   reg [1:0] rows_seen;   // becomes 2 after two lines have been stored
   wire have2rows = rows_seen[1];
 
-  // --------- pipeline ---------
+  //pipeline
   always @(posedge pclk) begin
     if (rst) begin
       vde_d0<=0; vde_d1<=0; vde_d2<=0;
